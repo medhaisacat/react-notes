@@ -1,0 +1,7 @@
+.TextCard {
+    display: flex;
+    box-sizing: border-box;
+    background-color: aqua;
+    padding: 1%;
+    justify-content: center;
+}

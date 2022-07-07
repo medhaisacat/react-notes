@@ -1,0 +1,6 @@
+.TaskCard {
+    background-color: plum;
+    display: flexbox;
+    justify-content: center;
+    margin-top: 1%;
+}
