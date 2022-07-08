@@ -8,12 +8,13 @@ function App() {
   const titleText = "CAN'T WAIT TO-DO LIST";
   const decorators = "***";
 
-  const [tasks, setTasks] = useState([]);
+  // const [tasks, setTasks] = useState([]);
   const handleCallback = childData => {
-    setTasks(tasks => [...tasks, childData]);
-    localStorage.setObj("list", [...tasks, childData]);
+    // setTasks(tasks => [...tasks, childData]);
+    // localStorage.setObj("list", [...tasks, childData]);
     console.log("I stored!");
   }
+  console.log("App - before return");
   return (
     <div className="App">
       <WelcomeCard>{decorators + titleText + decorators}</WelcomeCard>

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 function TextCard(props) {
+    console.log('SOME ISSUE EXISTS!');
     const tasks = useSelector(state => state.tasks);
     const dispatch = useDispatch();
 

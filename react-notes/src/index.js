@@ -6,7 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import listStore from './store/listStore';
 
+
+// Add this in your component file
+require('react-dom');
+window.React2 = require('react');
+console.log(window.React1 === window.React2);
+console.log(window.React1);
+console.log(window.React2);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log(listStore.getState());
 root.render(
   <React.StrictMode>
     <Provider store={listStore}>

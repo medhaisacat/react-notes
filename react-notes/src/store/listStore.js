@@ -1,30 +1,21 @@
 import { createStore } from 'redux';
+const defaultState = {"task": "Hello world", "completion": true};
 
-const listReducer = (state = {tasks: []}, action) => {
-    if(action.type === 'ADD') {
-        return {
-            list: [
-                ...state.tasks,
-                {
-                    task: action.task,
-                    completion: false
-                }
-            ]
-        }
-    }
-    if(action.type === 'DELETE') {
-        return {
-            list: [
-                state.tasks.filter(task => {
-                    return (task.task !== action.task);
+const listReducer = (state = [defaultState], action) => {
+    switch(action.type) {
+        case 'ADD':
+            return state.concat([action.item]);
+        case 'DELETE':
+            return [
+                state.filter(item => {
+                    return (item.task !== action.item.task);
                 })
-            ]
-        }
+            ];
+        default:
+            return state;
     }
-
-    return {}
 }
 
-const listStore = createStore(listReducer);
+const listStore = createStore(listReducer, [defaultState]);
 
 export default listStore;
